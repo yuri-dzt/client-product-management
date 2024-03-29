@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja</title>
+    <link rel="stylesheet" href="./client.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="clientPage">
+      <div class="menu">
+        <button >
+          <a href="http://localhost:3300/product">
+            Produtos
+          </a>
+        </button>
+        <button><a href="http://localhost:3300/client">
+          Clientes
+        </a></button>
+      </div>
+      <div class="container">
+        <div class="table">
+          <div class="title">
+            <h1>Nome</h1>
+            <h1>Sobrenome</h1>
+            <h1>Email</h1>
+            <h1>Idade</h1>
+            <h1>Remover</h1>
+          </div>
+          <div id="usersBox" class="usersBox">
+          </div>
+        </div>
+        <form action="">
+          <h1>Adicione um novo cliente:</h1>
+          <div class="inputs">
+            <div class="userNames">
+              <div class="input">
+                <label for="">Nome: </label>
+                <input type="text" />
+              </div>
+              <div class="input">
+                <label for="">Sobrenome: </label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="userInfos">
+              <div class="input">
+                <label for="">E-mail:</label>
+                <input type="text" />
+              </div>
+              <div class="input">
+                <label for="">Idade:</label>
+                <input type="number" />
+              </div>
+            </div>
+          </div>
+          <button>Criar Cliente</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="./client.js"></script>
+  </body>
+</html>

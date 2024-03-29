@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="home">
+      <div class="container">
+        <div class="title">
+          <h1>Entre e descubra!</h1>
+          <h2>
+            Navegue pelos produtos e usuários e adicione novas peças ao nosso
+            universo. Bem-vindo à sua plataforma de possibilidades!
+          </h2>
+        </div>
+
+        <div class="btns">
+          <a href="http://localhost:3300/product"
+            ><button>Ver produtos</button></a
+          >
+          <a href="http://localhost:3300/client"
+            ><button class="users">Ver Clientes</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+        resize: none;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        background-color: #a8a5a5;
+        width: 4px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #787878;
+      }
+
+      body {
+        background-image: linear-gradient(45deg, #2f1673, #793dab);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #home {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #home .container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+      }
+
+      #home .container .title {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      #home .container .title h1 {
+        color: #fff;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 800;
+      }
+
+      #home .container .title h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        width: 45%;
+      }
+
+      #home .container .btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      #home .container .btns a button {
+        width: 347px;
+        height: 48px;
+        border-radius: 30px;
+        background-color: #008dff;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 300;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      #home .container .btns a .users {
+        background-color: #ffffff28;
+        border: 1px solid #fff;
+      }
+
+      #home .container .btns a button:hover {
+        transform: translateY(-3px);
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja</title>
+    <link rel="stylesheet" href="./product.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="productPage">
+      <div class="menu">
+        <button >
+          <a href="http://localhost:3300/product">
+            Produtos
+          </a>
+        </button>
+        <button><a href="http://localhost:3300/client">
+          Clientes
+        </a></button>
+      </div>
+      <div class="container">
+        <div class="table">
+          <div class="title">
+            <h1>Nome</h1>
+            <h1>Descrição</h1>
+            <h1>Preço</h1>
+            <h1>Data Atualizada</h1>
+            <h1>Remover</h1>
+          </div>
+          <div id="productBox" class="productBox">
+          </div>
+        </div>
+        <form action="">
+          <h1>Adicione um novo produto:</h1>
+          <div class="inputs">
+            <div class="productNames">
+              <div class="input">
+                <label for="">Nome: </label>
+                <input type="text" />
+              </div>
+              <div class="input">
+                <label for="">Descrição: </label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="productInfos">
+              <div class="input">
+                <label for="">Preço:</label>
+                <input type="number" />
+              </div>
+              <div class="input">
+                <label for="">Data Atualizada:</label>
+                <input type="number" />
+              </div>
+            </div>
+          </div>
+          <button>Criar Produto</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="./product.js"></script>
+  </body>
+</html>
