@@ -55,3 +55,31 @@ export function handleAddNewProduct(name: string, description: string, price: nu
     });
   });
 }
+
+export function changeProductPrice(id: string, newPrice: string, callback: (err: Error | null, result?: any) => void) {
+  const updateProductPriceQuery = `
+      UPDATE produtos
+      SET preco = ?
+      WHERE id = ?;
+  `;
+
+  pool.query(updateProductPriceQuery, [newPrice, id], (err, result) => {
+      if (err) {
+          callback(err);
+          return;
+      }
+      callback(null, result);
+  });
+}
+
+export function deleteProduct(id: number, callback: (error: Error | null, result?: any) => void) {
+  const deleteQuery = `DELETE FROM produtos WHERE id = ?`;
+
+  pool.query(deleteQuery, [id], (err, result) => {
+      if (err) {
+          callback(err);
+          return;
+      }
+      callback(null, result);
+  });
+}

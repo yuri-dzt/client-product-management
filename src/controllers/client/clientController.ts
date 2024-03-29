@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllClients, handleAddNewClient } from '../../models/client/clientModel';
+import { changeClientName, deleteClient, getAllClients, handleAddNewClient } from '../../models/client/clientModel';
 
 class ClientController {
   public getAllClients(req: Request, res: Response): void {
@@ -27,11 +27,29 @@ class ClientController {
   }
 
   public changeClientName(req: Request, res: Response): void {
-    
+    const { id, nome } = req.body;
+
+    changeClientName(id, nome, (err, result) => {
+      if (err) {
+        console.log('Erro ao alterar o nome do cliente:', err)
+        res.status(500).json({ error: 'Erro ao alterar o nome do cliente' })
+        return;
+      }
+    })
+    res.status(201).json({ message: 'Nome do cliente alterado com sucesso!' })
   }
 
   public deleteClient(req: Request, res: Response): void {
+    const { id } = req.body
 
+    deleteClient(id, (err, result) => {
+      if (err) {
+        console.log('Erro ao deletar Cliente:', err)
+        res.status(500).json({ error: 'Erro ao deletar Cliente' })
+        return;
+      }
+      res.status(201).json({ message: 'Cliente deletado com sucesso!' })
+    })
   }
 }
 

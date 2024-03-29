@@ -49,3 +49,33 @@ export function handleAddNewClient(name: string, lastName: string, email: string
     });
   });
 }
+
+//CHANGE THE CLIENT NAME FUNCTION
+export function changeClientName(id: string, newName: string, callback: (error: Error | null, message?: string) => void): void {
+  const updateClientNameQuery = `
+      UPDATE clientes
+      SET nome = ?
+      WHERE id = ?;
+  `;
+
+  pool.query(updateClientNameQuery, [newName, id], (err, result) => {
+    if (err) {
+      callback(err);
+      return;
+    }
+    callback(null, 'Nome do cliente atualizado com sucesso');
+  });
+}
+
+// DELETE CLIENT FUNCTION
+export function deleteClient(id: number, callback: (error: Error | null, result?: any) => void) {
+  const deleteQuery = `DELETE FROM clientes WHERE id = ?`;
+
+  pool.query(deleteQuery, [id], (err, result) => {
+      if (err) {
+          callback(err);
+          return;
+      }
+      callback(null, result);
+  });
+}

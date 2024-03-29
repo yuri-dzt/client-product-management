@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllProducts, handleAddNewProduct } from '../../models/product/productModel';
+import { changeProductPrice, deleteProduct, getAllProducts, handleAddNewProduct } from '../../models/product/productModel';
 
 class ProductController {
   public getAllProducts(req: Request, res: Response): void {
@@ -27,11 +27,34 @@ class ProductController {
   }
 
   public changeProductPrice(req: Request, res: Response): void {
+    const { id, newPrice } = req.body;
 
+    if (!newPrice) {
+      res.status(400).json({ error: 'Novo preço inválido' });
+      return;
+    }
+
+    changeProductPrice(id, newPrice, (err, result) => {
+      if (err) {
+        console.error('Erro ao mudar o preço do produto:', err);
+        res.status(500).json({ error: 'Erro ao mudar o preço do produto' });
+        return;
+      }
+      res.status(201).json({ message: 'Preço do produto alterado com sucesso!' });
+    })
   }
 
-  public deleteProduct(req: Request, res: Response): void {
-    
+  public deleteClient(req: Request, res: Response): void {
+    const { id } = req.body
+
+    deleteProduct(id, (err, result) => {
+      if (err) {
+        console.log('Erro ao deletar produto:', err)
+        res.status(500).json({ error: 'Erro ao deletar produto' })
+        return;
+      }
+      res.status(201).json({ message: 'Produto deletado com sucesso!' })
+    })
   }
 }
 
